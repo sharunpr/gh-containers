@@ -10,7 +10,7 @@ env:
 jobs:
   test:
     environment: testing
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.pwrmezs.mongodb.net
@@ -36,7 +36,7 @@ jobs:
           echo "MONGODB_USERNAME: $MONGODB_USERNAME"
   deploy:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Output information
         env:
